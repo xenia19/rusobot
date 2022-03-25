@@ -5,6 +5,7 @@ const { Telegraf, Markup } = require('telegraf')
 // const app = express()
 
 const CURRENT_URL = "https://young-earth-23614.herokuapp.com/";
+
 const bot = new Telegraf('5080401001:AAFK1IodTe27_hPePDaqgzHP96-4-li3T94')
 
 
