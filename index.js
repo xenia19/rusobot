@@ -14,28 +14,26 @@ const bot = new Telegraf('5080401001:AAFK1IodTe27_hPePDaqgzHP96-4-li3T94')
 
 bot.start((ctx) => {ctx.reply(`Hola ${ctx.from.first_name}! Soy Matrioshka. Te voy a ayudar con el Ruso. Qué te interesa?`,
 Markup.inlineKeyboard([[
-Markup.button.callback("💪 Empezar ahora desde 0", "Empezar ahora desde 0"),
-Markup.button.callback("💯 Mejorar la pronunciacion ", "pronunciacion")
+Markup.button.callback("💪 Empezar desde 0", "Empezar ahora desde 0")],
 
+[Markup.button.callback("💯 La pronunciacion ", "pronunciacion")]
 
-],
+,
 [
-  Markup.button.callback("🤸‍♀️ Estudiar los verbos", "verbos"),
-  Markup.button.callback("🔟 Estudiar los numeros", "numeros"),
+  Markup.button.callback("🤸‍♀️ Los verbos", "verbos"),
+  Markup.button.callback("🔟 Los numeros", "numeros"),
 
 
 
 ],
 
-[Markup.button.callback("👀 Hacer un curso de Ruso", "curso"),
-Markup.button.callback("👩‍🏫 Clases por Skype", "clases")],
+[Markup.button.callback("👀 Hacer un curso de Ruso", "curso")]
+,
+[Markup.button.callback("👩‍🏫 Clases por Skype", "clases")],
 
-[Markup.button.callback("🌞 Las palabras más usadas", "palabras"),
-Markup.button.callback("🍬 Estudiar los casos", "casos"),
-
-],
-
-])
+[Markup.button.callback("🌞 Las palabras más usadas", "palabras")],
+[Markup.button.callback("🍬 Los casos", "casos")]]
+)
 )
 }
 )
@@ -44,7 +42,7 @@ bot.command('/numeros', (ctx) => {ctx.reply('Elige el tema',
 Markup.inlineKeyboard([
 Markup.button.callback("De 0 a 20", 'De 0 a 20'),
 Markup.button.callback("De 20 a 100", 'De 20 a 100'),
-Markup.button.callback("Hacer una prueba", 'Hacer una prueba'),
+Markup.button.callback("Una prueba", 'Una prueba'),
 ]
 )
 
@@ -52,6 +50,34 @@ Markup.button.callback("Hacer una prueba", 'Hacer una prueba'),
 )
 
 })
+
+
+bot.on('text', (ctx) => {
+  {ctx.reply('Elige el tema',
+  Markup.inlineKeyboard([[
+    Markup.button.callback("💪 Empezar desde 0", "Empezar ahora desde 0")],
+    
+    [Markup.button.callback("💯 La pronunciacion ", "pronunciacion")]
+    
+    ,
+    [
+      Markup.button.callback("🤸‍♀️ Los verbos", "verbos"),
+      Markup.button.callback("🔟 Los numeros", "numeros"),
+    
+    
+    
+    ],
+    
+    [Markup.button.callback("👀 Hacer un curso de Ruso", "curso")]
+    ,
+    [Markup.button.callback("👩‍🏫 Clases por Skype", "clases")],
+    
+    [Markup.button.callback("🌞 Las palabras más usadas", "palabras")],
+    [Markup.button.callback("🍬 Los casos", "casos")]]
+    )
+  )
+  }
+} )
 
 bot.command('/clases', (ctx) => {ctx.reply('Gracias por tu interes en mis clases! Yo doy clases hasta las 21:00 de España (hasta las 14:00 de México). El precio de una clase (de 1 hora) es 15 euros. Se puede reservar la clase aqui - https://curso-de-ruso.com/clases-por-skype/',
 )
@@ -63,6 +89,13 @@ bot.command('/curso', (ctx) =>
 })
 
 bot.command('/verbos', (ctx) => {ctx.reply('Elige un tema',
+Markup.inlineKeyboard([
+  [Markup.button.callback("Todo sobre los verbos", 'Todo sobre los verbos')],
+[Markup.button.callback("Los verbos de movimiento", 'Los verbos de movimiento')],
+[Markup.button.callback("Los verbos más usados", 'Los verbos más usados')],
+[Markup.button.callback("Prefijos con los verbos", 'Prefijos con los verbos')],
+[Markup.button.callback("Los verbos que terminan con овать", 'Los verbos que terminan con овать')]
+])
 
 // 
 )
@@ -97,8 +130,8 @@ Markup.button.callback("El Instrumental", 'El Instrumental')],
 bot.command('/pronunciacion', (ctx) => {ctx.reply('Elige un tema',
 
 Markup.inlineKeyboard([
-[Markup.button.callback("Las reglas de pronunciacion", 'Las reglas de pronunciacion'),
-Markup.button.callback("Trabalenguas", 'Trabalenguas')],
+[Markup.button.callback("Las reglas de pronunciacion", 'Las reglas de pronunciacion')],
+[Markup.button.callback("Trabalenguas", 'Trabalenguas')],
 [Markup.button.callback("Cuando 'o' se pronuncia como 'a'? ", 'pronunciacion de o')
 ]])
 )
@@ -106,10 +139,10 @@ Markup.button.callback("Trabalenguas", 'Trabalenguas')],
 
 bot.action('pronunciacion', (ctx) => {ctx.reply('Elige el tema',
 Markup.inlineKeyboard([
-[Markup.button.callback("Las reglas de pronunciacion", 'Las reglas de pronunciacion'),
-Markup.button.callback("Trabalenguas", 'Trabalenguas')],
-[Markup.button.callback("Cuando 'o' se pronuncia como 'a'? ", 'pronunciacion de o')
-]])
+  [Markup.button.callback("Las reglas de pronunciacion", 'Las reglas de pronunciacion')],
+  [Markup.button.callback("Trabalenguas", 'Trabalenguas')],
+  [Markup.button.callback("Cuando 'o' se pronuncia como 'a'? ", 'pronunciacion de o')
+  ]])
 )
 })
 
@@ -138,12 +171,13 @@ Markup.button.callback("El Instrumental", 'El Instrumental')],
 
 bot.action('verbos', (ctx) => {ctx.reply('Elige el tema',
 Markup.inlineKeyboard([
-  [Markup.button.callback("Todo sobre los verbos", 'Todo sobre los verbos'),
-Markup.button.callback("Los verbos de movimiento", 'Los verbos de movimiento')],
-[Markup.button.callback("Los verbos más usados", 'Los verbos más usados'),
-Markup.button.callback("Prefijos con los verbos", 'Prefijos con los verbos')],
+  [Markup.button.callback("Todo sobre los verbos", 'Todo sobre los verbos')],
+[Markup.button.callback("Los verbos de movimiento", 'Los verbos de movimiento')],
+[Markup.button.callback("Los verbos más usados", 'Los verbos más usados')],
+[Markup.button.callback("Prefijos con los verbos", 'Prefijos con los verbos')],
 [Markup.button.callback("Los verbos que terminan con овать", 'Los verbos que terminan con овать')]
-]))})
+])
+)})
 
 bot.action('curso',(ctx) => {ctx.reply('Puedes probar mi curso de Ruso Basico completo aquí - https://curso-de-ruso.com/basico/alumno/course/view.php?id=2',
 )
@@ -236,7 +270,7 @@ Markup.button.callback("Hacer una prueba", 'Hacer una prueba'),
  bot.action('De 20 a 100', (ctx) => {ctx.reply('https://www.youtube.com/watch?v=pRyBt2XDTxo',
 )})
 
- bot.action('Hacer una prueba', (ctx) => {ctx.reply('https://www.youtube.com/watch?v=E9GL48oxMEk',
+ bot.action('Una prueba', (ctx) => {ctx.reply('https://www.youtube.com/watch?v=E9GL48oxMEk',
 )})
 
 // bot.action('Sí, bastante', (ctx) =>
