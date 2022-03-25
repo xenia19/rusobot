@@ -1,8 +1,8 @@
 const { Telegraf, Markup } = require('telegraf')
 
-// const express = require("express")
+const express = require("express")
 
-// const app = express()
+const app = express()
 
 const CURRENT_URL = "https://young-earth-23614.herokuapp.com/";
 
@@ -389,13 +389,6 @@ bot.action('Aprendí las palabras', (ctx) =>
 bot.launch()
 
 
-// app.listen(process.env.PORT, '0.0.0.0');
-
-// app.use(bot.webhookCallback("/bot"));
-
-// bot.telegram.setWebhook(`https://rusobot.herokuapp.com/bot`);
-
-// //before app.get
-// app.get("/", (req, res) => {
-//   res.send("Our new tab!!");
-// });
+app.listen(process.env.PORT || 3001, '0.0.0.0', () => {
+  console.log("Server is running.");
+});
