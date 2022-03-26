@@ -429,8 +429,6 @@ bot.action('Aprendí las palabras', (ctx) =>
 
 bot.launch()
 
-
-app.listen(process.env.PORT || 3001, '0.0.0.0', () => {
-  console.log("Server is running.");
+app.listen(process.env.PORT || 3000, function(){
+  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
-
