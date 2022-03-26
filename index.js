@@ -4,13 +4,13 @@ const express = require("express")
 
 const app = express()
 
-const CURRENT_URL = "https://young-earth-23614.herokuapp.com/";
+
 
 const bot = new Telegraf('5080401001:AAHGxO00OxUgSm-4cEwaJaGNPF0MtnescA8')
 
 
 
-
+bot.setWebHook('https://rusobot.herokuapp.com/5080401001:AAHGxO00OxUgSm-4cEwaJaGNPF0MtnescA8');
 
 
 bot.start((ctx) => {ctx.reply(`Hola ${ctx.from.first_name}! Soy Matrioshka. Te voy a ayudar con el Ruso. Qué te interesa?`,
@@ -429,6 +429,8 @@ bot.action('Aprendí las palabras', (ctx) =>
 
 bot.launch()
 
-app.listen(process.env.PORT || 3000, function(){
-  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+
+app.listen(process.env.PORT || 3000, '0.0.0.0', () => {
+  console.log("Server is running.");
 });
+
