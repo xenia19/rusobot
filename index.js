@@ -39,6 +39,12 @@ Markup.button.callback("💪 Empezar desde 0", "Empezar desde 0")],
 }
 )
 
+bot.command('/empezar', (ctx) => {ctx.reply('Bien! Podemos empezar con el alfabeto: https://www.youtube.com/watch?v=zoj24YhjGCg ',
+Markup.inlineKeyboard([
+Markup.button.callback("Ya aprendí el alfabeto", 'Ya aprendí el alfabeto'),
+]))})
+
+
 bot.command('/numeros', (ctx) => {ctx.reply('Elige el tema',
 Markup.inlineKeyboard([
 Markup.button.callback("De 0 a 20", 'De 0 a 20'),
