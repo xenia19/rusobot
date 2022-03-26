@@ -5,12 +5,25 @@ const express = require("express")
 const app = express()
 
 
-
+const port = process.env.PORT || 5000;
 const bot = new Telegraf('5080401001:AAHGxO00OxUgSm-4cEwaJaGNPF0MtnescA8')
 
 
 
-bot.setWebHook('https://rusobot.herokuapp.com/5080401001:AAHGxO00OxUgSm-4cEwaJaGNPF0MtnescA8');
+app.use(express.json());
+
+app.get('/', (req, res) => {
+	res.status(200).json({ message: 'Hola' });
+});
+// TELEGRAM WEBHOOK - https://core.telegram.org/bots/api#setwebhook
+app.post('5080401001:AAHGxO00OxUgSm-4cEwaJaGNPF0MtnescA8', (req, res) => {
+	bot.processUpdate(req.body);
+	res.status(200).json({ message: 'ok' });
+});
+
+app.listen(port, () => {
+	console.log(`\n\nServer running on port ${port}.\n\n`);
+});
 
 
 bot.start((ctx) => {ctx.reply(`Hola ${ctx.from.first_name}! Soy Matrioshka. Te voy a ayudar con el Ruso. Qué te interesa?`,
@@ -430,7 +443,4 @@ bot.action('Aprendí las palabras', (ctx) =>
 bot.launch()
 
 
-app.listen(process.env.PORT || 3000, '0.0.0.0', () => {
-  console.log("Server is running.");
-});
 
