@@ -4,7 +4,7 @@ const express = require("express")
 
 const app = express()
 
-const CURRENT_URL = "https://fast-cliffs-67121.herokuapp.com/";
+const CURRENT_URL = "https://young-earth-23614.herokuapp.com/";
 
 const bot = new Telegraf('5080401001:AAHGxO00OxUgSm-4cEwaJaGNPF0MtnescA8')
 
@@ -15,7 +15,7 @@ const bot = new Telegraf('5080401001:AAHGxO00OxUgSm-4cEwaJaGNPF0MtnescA8')
 
 bot.start((ctx) => {ctx.reply(`Hola ${ctx.from.first_name}! Soy Matrioshka. Te voy a ayudar con el Ruso. Qué te interesa?`,
 Markup.inlineKeyboard([[
-Markup.button.callback("💪 Empezar desde 0", "Empezar ahora desde 0")],
+Markup.button.callback("💪 Empezar desde 0", "Empezar desde 0")],
 
 [Markup.button.callback("💯 La pronunciacion ", "pronunciacion")]
 
@@ -56,7 +56,7 @@ Markup.button.callback("Una prueba", 'Una prueba'),
 bot.on('text', (ctx) => {
   {ctx.reply('Elige el tema',
   Markup.inlineKeyboard([[
-    Markup.button.callback("💪 Empezar desde 0", "Empezar ahora desde 0")],
+    Markup.button.callback("💪 Empezar desde 0", "Empezar desde 0")],
     
     [Markup.button.callback("💯 La pronunciacion ", "pronunciacion")]
     
@@ -300,7 +300,7 @@ Markup.button.callback("Hacer una prueba", 'Hacer una prueba'),
 
 //principiante
 
-bot.action('Empezar ahora desde 0', (ctx) => {ctx.reply('Bien! Podemos empezar con el alfabeto: https://www.youtube.com/watch?v=zoj24YhjGCg ',
+bot.action('Empezar desde 0', (ctx) => {ctx.reply('Bien! Podemos empezar con el alfabeto: https://www.youtube.com/watch?v=zoj24YhjGCg ',
 Markup.inlineKeyboard([
 Markup.button.callback("Ya aprendí el alfabeto", 'Ya aprendí el alfabeto'),
 ]))})
