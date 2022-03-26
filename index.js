@@ -4,9 +4,9 @@ const express = require("express")
 
 const app = express()
 
-const CURRENT_URL = "https://young-earth-23614.herokuapp.com/";
+const CURRENT_URL = "https://fast-cliffs-67121.herokuapp.com/";
 
-const bot = new Telegraf('5080401001:AAFK1IodTe27_hPePDaqgzHP96-4-li3T94')
+const bot = new Telegraf('5080401001:AAHGxO00OxUgSm-4cEwaJaGNPF0MtnescA8')
 
 
 
