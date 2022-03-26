@@ -437,10 +437,3 @@ bot.action('Aprendí las palabras', (ctx) =>
 
 
 
-
-
-
-bot.launch()
-
-
-
