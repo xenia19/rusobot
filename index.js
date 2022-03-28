@@ -65,10 +65,61 @@ Markup.button.callback("De 20 a 100", 'De 20 a 100'),
 Markup.button.callback("Una prueba", 'Una prueba'),
 ]
 )
-
-
 )
+})
 
+bot.command('/clases', (ctx) => {ctx.reply('Gracias por tu interes en mis clases! Yo doy clases hasta las 21:00 de España (hasta las 14:00 de México). El precio de una clase (de 1 hora) es 15 euros. Se puede reservar la clase aqui - https://curso-de-ruso.com/clases-por-skype/',
+)
+})
+
+
+bot.command('/verbos', (ctx) => {ctx.reply('Elige un tema',
+Markup.inlineKeyboard([
+  [Markup.button.callback("Todo sobre los verbos", 'Todo sobre los verbos')],
+[Markup.button.callback("Los verbos de movimiento", 'Los verbos de movimiento')],
+[Markup.button.callback("Los verbos más usados", 'Los verbos más usados')],
+[Markup.button.callback("Prefijos con los verbos", 'Prefijos con los verbos')],
+[Markup.button.callback("Los verbos que terminan con овать", 'Los verbos que terminan con овать')]
+])
+)
+})
+
+
+bot.command('/palabras', (ctx) => {ctx.reply('Las palabras más usadas en Ruso',
+Markup.inlineKeyboard([
+  [Markup.button.callback("De 1 a 50", 'De 1 a 50'),
+Markup.button.callback("De 51 a 100", 'De 51 a 100')],
+[Markup.button.callback("De 101 a 150", 'De 101 a 150'),
+Markup.button.callback("De 151 a 200", 'De 151 a 200')],
+[Markup.button.callback("De 201 a 250", 'De 201 a 250')]
+])
+)
+})
+
+
+bot.command('/curso', (ctx) => {ctx.reply('Puedes probar mi curso de Ruso Basico completo aquí - https://curso-de-ruso.com/basico/alumno/course/view.php?id=2',
+)
+})
+
+bot.command('/casos', (ctx) => {ctx.reply('Elige un tema',
+Markup.inlineKeyboard([
+[Markup.button.callback("El Prepositivo", 'El Prepositivo'),
+Markup.button.callback("El Acusativo", 'El Acusativo')],
+[Markup.button.callback("El Dativo", 'El Dativo'),
+Markup.button.callback("El Instrumental", 'El Instrumental')],
+[Markup.button.callback("El Genitivo", 'El Genitivo')]
+]))
+})
+
+
+bot.command('/pronunciacion', (ctx) => {ctx.reply('Elige un tema',
+
+Markup.inlineKeyboard([
+[Markup.button.callback("Las reglas de pronunciacion", 'Las reglas de pronunciacion')],
+[Markup.button.callback("Trabalenguas", 'Trabalenguas')],
+[Markup.button.callback("Cuando 'o' se pronuncia como 'a'? ", 'pronunciacion de o')
+]])
+)
 })
 
 
@@ -99,63 +150,9 @@ bot.on('text', (ctx) => {
   }
 } )
 
-bot.command('/clases', (ctx) => {ctx.reply('Gracias por tu interes en mis clases! Yo doy clases hasta las 21:00 de España (hasta las 14:00 de México). El precio de una clase (de 1 hora) es 15 euros. Se puede reservar la clase aqui - https://curso-de-ruso.com/clases-por-skype/',
-)
-})
-
-bot.command('/curso', (ctx) =>
- {ctx.reply('Puedes probar mi curso de Ruso Basico completo aquí - https://curso-de-ruso.com/basico/alumno/course/view.php?id=2',
-)
-})
-
-bot.command('/verbos', (ctx) => {ctx.reply('Elige un tema',
-Markup.inlineKeyboard([
-  [Markup.button.callback("Todo sobre los verbos", 'Todo sobre los verbos')],
-[Markup.button.callback("Los verbos de movimiento", 'Los verbos de movimiento')],
-[Markup.button.callback("Los verbos más usados", 'Los verbos más usados')],
-[Markup.button.callback("Prefijos con los verbos", 'Prefijos con los verbos')],
-[Markup.button.callback("Los verbos que terminan con овать", 'Los verbos que terminan con овать')]
-])
-
-// 
-)
-})
 
 
-bot.command('/palabras', (ctx) => {ctx.reply('Las palabras más usadas en Ruso',
 
-Markup.inlineKeyboard([
-  [Markup.button.callback("De 1 a 50", 'De 1 a 50'),
-Markup.button.callback("De 51 a 100", 'De 51 a 100')],
-[Markup.button.callback("De 101 a 150", 'De 101 a 150'),
-Markup.button.callback("De 151 a 200", 'De 151 a 200')],
-[Markup.button.callback("De 201 a 250", 'De 201 a 250')]
-])
-)
-})
-
-bot.command('/casos', (ctx) => {ctx.reply('Elige un tema',
-
-Markup.inlineKeyboard([
-[Markup.button.callback("El Prepositivo", 'El Prepositivo'),
-Markup.button.callback("El Acusativo", 'El Acusativo')],
-[Markup.button.callback("El Dativo", 'El Dativo'),
-Markup.button.callback("El Instrumental", 'El Instrumental')],
-[Markup.button.callback("El Genitivo", 'El Genitivo')]
-])
- )
-})
-
-
-bot.command('/pronunciacion', (ctx) => {ctx.reply('Elige un tema',
-
-Markup.inlineKeyboard([
-[Markup.button.callback("Las reglas de pronunciacion", 'Las reglas de pronunciacion')],
-[Markup.button.callback("Trabalenguas", 'Trabalenguas')],
-[Markup.button.callback("Cuando 'o' se pronuncia como 'a'? ", 'pronunciacion de o')
-]])
-)
-})
 
 bot.action('pronunciacion', (ctx) => {ctx.reply('Elige el tema',
 Markup.inlineKeyboard([
@@ -202,6 +199,8 @@ Markup.inlineKeyboard([
 bot.action('curso',(ctx) => {ctx.reply('Puedes probar mi curso de Ruso Basico completo aquí - https://curso-de-ruso.com/basico/alumno/course/view.php?id=2',
 )
 })
+
+
 
 bot.action('palabras',(ctx) => {ctx.reply('Las palabras más usadas en Ruso',
 
@@ -434,6 +433,13 @@ bot.action('Aprendí las palabras', (ctx) =>
 )
 })
 
+
+
+
+
+
+
+bot.launch()
 
 
 
