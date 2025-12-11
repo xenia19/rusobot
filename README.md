@@ -32,9 +32,7 @@ Rusobot is a **Node.js & Telegraf-based Telegram bot** that provides a structure
 * **YouTube API integration** — Deliver video content
 * **Deployment-ready** — Runs on cloud platforms with webhook configuration
 
-📖 **What I Learned**
+📖
 
 This project strengthened my skills in **bot development, server-side logic, handling asynchronous events, and integrating third-party APIs**. It also demonstrates my ability to **build interactive educational tools** and manage a live bot application that delivers real-time content to users.
 
-
-Хочешь, чтобы я так сделал?
